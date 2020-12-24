@@ -3,14 +3,14 @@ import { View, Text, TouchableOpacity, Platform, StyleSheet } from 'react-native
 import FormInput from '../src/components/FormInput';
 import FormButton from '../src/components/FormButton';
 import SocialButton from '../src/components/SocialButton';
-//import { AuthContext } from '../navigation/AuthProvider';
+import { AuthContext } from '../navigation/AuthProvider';
 
 const SignupScreen = ({ navigation }) => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [confirmPassword, setConfirmPassword] = useState();
 
-  //const { register } = useContext(AuthContext);
+  const { register } = useContext(AuthContext);
 
   return (
     <View style={styles.container}>
