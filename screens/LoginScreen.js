@@ -3,11 +3,13 @@ import { View, Text, TouchableOpacity, Image, Platform, StyleSheet, ScrollView }
 import FormInput from '../src/components/FormInput';
 import FormButton from '../src/components/FormButton';
 import SocialButton from '../src/components/SocialButton';
-// import {AuthContext} from '../navigation/AuthStack';
+import {AuthContext} from '../navigation/AuthProvider';
 
 const LoginScreen = ({ navigation }) => {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
+
+    const {login} = useContext(AuthContext)
 
     //const { login, googleLogin, fbLogin } = useContext(AuthContext);
 
