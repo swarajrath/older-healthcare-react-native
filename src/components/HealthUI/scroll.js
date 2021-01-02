@@ -13,7 +13,7 @@ export default function scroll() {
                     <ImageBackground source={this.props.background} style={{width:'100%',height:'100%'}}/>
                 </View>
                 <TouchableOpacity style={styles.insidethree}>
-                    <Image source={require('../assets/i_icon.png')}/>
+                    <Image source={require('../../../assets/i_icon.png')}/>
                 </TouchableOpacity>
             </Animated.View>
     )

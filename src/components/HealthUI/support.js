@@ -14,7 +14,7 @@ export default function support() {
             </View>
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                 <TouchableOpacity>
-                    <Image source={require('../assets/rightbutton.png')} />
+                    <Image source={require('../../../assets/rightbutton.png')} />
                 </TouchableOpacity>
             </View>
         </View>

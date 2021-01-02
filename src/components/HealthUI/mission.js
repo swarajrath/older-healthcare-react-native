@@ -17,24 +17,24 @@ export default function mission() {
                         contentContainerStyle={{width:'200%'}}
                         showsHorizontalScrollIndicator={false}>
                             <Scroll bgcolor="#FFBE86" 
-                            background={require('../assets/graphtwo.png')}
+                            background={require('../../../assets/graphtwo.png')}
                             title="Game Of Chess"
                             month = "Sep - Nov"
                             animation = "bounceInLeft"
                             />
                              <Scroll bgcolor="#7DC9E7" 
-                            background={require('../assets/graphtwo.png')}
+                            background={require('../../../assets/graphtwo.png')}
                             title="100 Km Jogging"
                             month = "Jan - Feb"
                             animation = "bounceInLeft"
                             />
                              <Scroll bgcolor="#FFBE86" 
-                            background={require('../assets/graphtwo.png')}
+                            background={require('../../../assets/graphtwo.png')}
                             title="Netflix and Chill"
                             month = "March - April"
                             />
                              <Scroll bgcolor="#7DC9E7" 
-                            background={require('../assets/graphtwo.png')}
+                            background={require('../../../assets/graphtwo.png')}
                             title="Video Games"
                             month = "Aug - Sep"
                             />
@@ -49,21 +49,21 @@ export default function mission() {
                     elevation: 30,
                     backgroundColor : "#FFFFFF"}]}>
                         <Support
-                        image = {require('../assets/exercise.png')}
+                        image = {require('../../../assets/exercise.png')}
                         title = "Daily Exercise"
                         subtitle = "Difficulty on insensible"
                         />
                     </Animatable.View>
                     <Animatable.View animation="fadeInRight" duration={1500} style={[styles.rectangleone,{top : 580,backgroundColor:'#F4F9FC'}]}>
                         <Support
-                        image = {require('../assets/apple.png')}
+                        image = {require('../../../assets/apple.png')}
                         title = "Balanced Diet"
                         subtitle = "Occasional Preference fast"
                         />
                     </Animatable.View>
                     <Animatable.View animation="fadeInLeft" duration={1500} style={[styles.rectangleone,{top : 690,backgroundColor:'#F4F9FC'}]}>
                         <Support
-                        image = {require('../assets/cricket.png')}
+                        image = {require('../../../assets/cricket.png')}
                         title = "Sports and Yoga"
                         subtitle = "Services securing health ..."
                         />
