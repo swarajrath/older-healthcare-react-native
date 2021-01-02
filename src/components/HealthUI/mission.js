@@ -1,13 +1,12 @@
-import React from 'react';
+import React from 'react'
 import {View,Text,StyleSheet,ScrollView,TouchableOpacity} from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import Scroll from './scroll';
 import Support from './support';
 
-export default class Mission extends  React.Component{
-    render(){
-        return(
-            <View style={styles.container}>
+export default function mission() {
+    return (
+        <View style={styles.container}>
                 <ScrollView showsVerticalScrollIndicator={false} style={{flex:1}} contentContainerStyle={{width:'100%',height:'120%'}}>
                     <View style={styles.header}>
                         <Text style={styles.inline}>My Mission</Text>
@@ -71,9 +70,9 @@ export default class Mission extends  React.Component{
                     </Animatable.View>
                 </ScrollView>
             </View>
-        );
-    }
+    )
 }
+
 const styles = StyleSheet.create({
     container : {
         flex : 1,
