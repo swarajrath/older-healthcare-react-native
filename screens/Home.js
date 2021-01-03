@@ -1,9 +1,16 @@
 import React from 'react'
-import {View,Text,TouchableOpacity,ScrollView, SafeAreaView, TouchableOpacity, Animated, TouchableWithoutFeedback,StyleSheet,ImageBackground} from 'react-native';
+import {View,Text,ScrollView, SafeAreaView, Image, TouchableOpacity, Animated, TouchableWithoutFeedback,StyleSheet,ImageBackground} from 'react-native';
 import Day from '../src/components/HealthUI/day';
 import Card from '../src/components/HealthUI/card';
 
 const Home = () => {
+
+    const change = () => {
+        return(
+            this.props.navigation.navigate('Mission')
+        );
+    }
+    
     return (
         <ScrollView style={styles.container}>
                 <View style={styles.containerone}>
@@ -20,7 +27,7 @@ const Home = () => {
                         <Day dayname='Mon'/>
                         <Day dayname='Tue'/>
                         <Day dayname='Wed'/>
-                        <Day dayname='Thu' active={this.state.activestate}/>
+                        <Day dayname='Thu' active="rgba(255, 255, 255, 0.291821)" />
                         <Day dayname='Fri'/>
                         <Day dayname='Sat'/>
                     </View>

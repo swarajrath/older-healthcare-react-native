@@ -3,13 +3,13 @@ import { View, Text, TouchableOpacity, Image, Platform, StyleSheet, ScrollView }
 import FormInput from '../src/components/FormInput';
 import FormButton from '../src/components/FormButton';
 import SocialButton from '../src/components/SocialButton';
-import {AuthContext} from '../navigation/AuthProvider';
+import { AuthContext } from '../navigation/AuthProvider';
 
 const LoginScreen = ({ navigation }) => {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
 
-    const {login} = useContext(AuthContext)
+    const { login } = useContext(AuthContext)
 
     //const { login, googleLogin, fbLogin } = useContext(AuthContext);
 
@@ -48,25 +48,25 @@ const LoginScreen = ({ navigation }) => {
                 <Text style={styles.navButtonText}>Forgot Password?</Text>
             </TouchableOpacity>
 
-            
-                <View>
-                    <SocialButton
-                        buttonTitle="Sign In with Facebook"
-                        btnType="facebook"
-                        color="#4867aa"
-                        backgroundColor="#e6eaf4"
-                        onPress={() => fbLogin()}
-                    />
 
-                    <SocialButton
-                        buttonTitle="Sign In with Google"
-                        btnType="google"
-                        color="#de4d41"
-                        backgroundColor="#f5e7ea"
-                        onPress={() => googleLogin()}
-                    />
-                </View>
-            
+            <View>
+                <SocialButton
+                    buttonTitle="Sign In with Facebook"
+                    btnType="facebook"
+                    color="#4867aa"
+                    backgroundColor="#e6eaf4"
+                    onPress={() => fbLogin()}
+                />
+
+                <SocialButton
+                    buttonTitle="Sign In with Google"
+                    btnType="google"
+                    color="#de4d41"
+                    backgroundColor="#f5e7ea"
+                    onPress={() => googleLogin()}
+                />
+            </View>
+
 
             <TouchableOpacity
                 style={styles.forgotButton}

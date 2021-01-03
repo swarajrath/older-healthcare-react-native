@@ -1,11 +1,11 @@
 import React from 'react'
 import { View, StyleSheet, Text } from 'react-native'
 
-const day = () => {
+const day = (props) => {
     return (
         <View style={styles.box1}>
-                <View style={{borderRadius:10,padding:5,backgroundColor: this.props.active}}>
-                    <Text style={{color:'#fff'}}>{this.props.dayname}</Text>
+                <View style={{borderRadius:10,padding:5,backgroundColor: props.active}}>
+                    <Text style={{color:'#fff'}}>{props.dayname}</Text>
                 </View>
             </View>
     )
