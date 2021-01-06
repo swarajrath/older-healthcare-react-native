@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, FlatList, Modal } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import FormButton from '../src/components/FormButton';
 import { AuthContext } from '../navigation/AuthProvider';
 import TodoList from '../src/components/TodoList'
 import colors from '../styles/Colors'
+import AddListModal from '../src/components/AddListModal'
 
 
 // const {user, logout} = useContext(AuthContext);
@@ -13,9 +14,37 @@ import colors from '../styles/Colors'
 //   <FormButton buttonTitle="Logout" onPress={() => logout()} />
 // </View>
 export default class ProfileScreen extends React.Component {
+
+  state = {
+    addTodoVisible: false
+  }
+
+  toggleAdddTodoModal() {
+    this.setState({ addTodoVisible: !this.state.addTodoVisible })
+  }
+
+  renderList = (list) => {
+    return <TodoList list={list} updateList={this.updateList} />
+  }
+
+  addList = () => {
+    this.setState({lists: [...this.state.lists, {...lists, id: this.state.lists.length + 1, todos: []}]})
+  } 
+
+  updateList = () => {
+    this.setState({
+      lists: this.state.lists.map(item => {
+        return item.id === list.id ? list : item
+      })
+    })
+  }
+
   render() {
     return (
       <View style={styles.container}>
+        <Modal animationType="slide" visible={this.state.addTodoVisible} onRequestClose={() => this.toggleAdddTodoModal()} >
+          <AddListModal closeModal={() => this.toggleAdddTodoModal()} addList={this.addList} />
+        </Modal>
         <View style={{ flexDirection: "row" }}>
           <View style={styles.divider} />
           <Text style={styles.title}>
@@ -25,18 +54,19 @@ export default class ProfileScreen extends React.Component {
         </View>
 
         <View style={{ marginVertical: 48 }}>
-          <TouchableOpacity style={styles.addList}>
+          <TouchableOpacity style={styles.addList} onPress={() => this.toggleAdddTodoModal()}>
             <AntDesign name="plus" size={16} color={colors.blue} />
           </TouchableOpacity>
 
           <Text style={style.add}></Text>
         </View>
 
-        <View style={{height: 275, paddingLeft: 32}}>
-          <FlatList data={data} keyExtractor={item => item.name} 
-          horizontal={true} 
-          showsHorizontalScrollIndicator={false} 
-          renderItem={({item}) => <TodoList list={list} />} />
+        <View style={{ height: 275, paddingLeft: 32 }}>
+          <FlatList data={this.state.lists} keyExtractor={item => item.name}
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+            renderItem={({ item }) => this.renderList(item)}
+            keyboardShouldPersistTaps="always" />
         </View>
       </View>
     );
@@ -63,7 +93,7 @@ const styles = StyleSheet.create({
     fontWeight: 800,
     color: colors.black,
     paddingHorizontal: 64
-  }, 
+  },
   addList: {
     borderWidth: 2,
     borderColor: colors.lightBlue,
