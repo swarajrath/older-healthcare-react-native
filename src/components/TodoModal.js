@@ -5,7 +5,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import colors from '../../styles/Colors';
 
-export default class TodoModal extends Component {
+export default class TodoModal extends React.Component {
 
     state = {
         newTodo: ""

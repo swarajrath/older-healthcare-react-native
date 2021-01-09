@@ -16,7 +16,9 @@ import AddListModal from '../src/components/AddListModal'
 export default class ProfileScreen extends React.Component {
 
   state = {
-    addTodoVisible: false
+    addTodoVisible: false,
+    lists: tempData,
+    user: {}
   }
 
   toggleAdddTodoModal() {
@@ -45,6 +47,9 @@ export default class ProfileScreen extends React.Component {
         <Modal animationType="slide" visible={this.state.addTodoVisible} onRequestClose={() => this.toggleAdddTodoModal()} >
           <AddListModal closeModal={() => this.toggleAdddTodoModal()} addList={this.addList} />
         </Modal>
+        <View>
+          <Text>User: {this.state.user.uid}</Text>
+        </View>
         <View style={{ flexDirection: "row" }}>
           <View style={styles.divider} />
           <Text style={styles.title}>
@@ -90,7 +95,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 38,
-    fontWeight: 800,
+    fontWeight: "800",
     color: colors.black,
     paddingHorizontal: 64
   },

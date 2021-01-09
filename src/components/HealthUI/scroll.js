@@ -2,15 +2,15 @@ import React from 'react'
 import {View,Text,ImageBackground,Image,StyleSheet,TouchableOpacity} from 'react-native';
 import * as Animated from 'react-native-animatable';
 
-export default function scroll() {
+export default function scroll(props) {
     return (
-        <Animated.View animation={this.props.animation} duration={1200} style={[styles.memo1,{backgroundColor : this.props.bgcolor}]}>
+        <Animated.View animation={props.animation} duration={1200} style={[styles.memo1,{backgroundColor : props.bgcolor}]}>
                 <View style={styles.insideone}>
-                    <Text style={{fontSize:20,color:'#fff',width:100}}>{this.props.title}</Text>
-                    <Text style={{color:'#fff',fontSize:14,marginVertical:5}}>{this.props.month}</Text>
+                    <Text style={{fontSize:20,color:'#fff',width:100}}>{props.title}</Text>
+                    <Text style={{color:'#fff',fontSize:14,marginVertical:5}}>{props.month}</Text>
                 </View>
                 <View style={styles.insidetwo}>
-                    <ImageBackground source={this.props.background} style={{width:'100%',height:'100%'}}/>
+                    <ImageBackground source={props.background} style={{width:'100%',height:'100%'}}/>
                 </View>
                 <TouchableOpacity style={styles.insidethree}>
                     <Image source={require('../../../assets/i_icon.png')}/>

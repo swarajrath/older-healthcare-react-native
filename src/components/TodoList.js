@@ -4,7 +4,7 @@ import { color } from 'react-native-reanimated';
 import Colors from '../../styles/Colors';
 import TodoModal from './TodoModal';
 
-export default class TodoList extends React.component {
+export default class TodoList extends React.Component {
 
     state = {
         showListVisible: false
@@ -51,12 +51,12 @@ const styles = StyleSheet.create({
         paddingHorizontal: 16,
         borderRadius: 6,
         marginHorizontal: 12,
-        alignItems: "cente",
+        alignItems: "center",
         width: 200
     },
     listTitle: {
         fontSize: 24,
-        fontWeight: 700,
+        fontWeight: "700",
         color: Colors.white,
         marginBottom: 18
     },

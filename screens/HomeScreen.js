@@ -12,15 +12,18 @@ import { NavigationContainer } from '@react-navigation/native';
 
 const Stack = createStackNavigator();
 
-
+// const { user, logout } = useContext(AuthContext)
 export default class HomeScreen extends React.Component {
-    render() {
+
+
+    static contextType = AuthContext
+    render() {  
+        const { user, logout } = this.context
+        
         return (
             
-                
-                
                 <Stack.Navigator>
-                    <Stack.Screen name="Home" component={Home} options={{
+                    <Stack.Screen name="Home" component={Home} userId={user.uid} options={{
                         headerTransparent: true,
                         headerLeft: () => (
                             <Image source={require('../assets/drawericon.png')} style={{}} />
@@ -42,7 +45,6 @@ export default class HomeScreen extends React.Component {
                     }} />
                 </Stack.Navigator>
            
-
 
         )
     }
