@@ -8,7 +8,9 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import HomeScreen from '../screens/HomeScreen';
 import NuitrionScreen from '../screens/NuitrionScreen';
 import ProfileScreen from '../screens/ProfileScreen'
-import AddPostScreen from '../screens/AddPostScreen'
+import AddPostScreen from '../screens/AddPostScreen';
+import UserProfileScreen from '../screens/UserProfileScreen';
+import alanBtn from "@alan-ai/alan-sdk-web";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -67,6 +69,8 @@ const HomeStack = ({ navigation }) => (
 const AppStack = () => {
 
     return (
+        <View>
+
         <Tab.Navigator
             tabBarOptions={{
                 activeTintColor: '#2e64e5',
@@ -109,7 +113,18 @@ const AppStack = () => {
                     ),
                 }}
             />
+            <Tab.Screen
+                name="User-Profile"
+                component={UserProfileScreen}
+                options={{
+                    tabBarLabel: 'To Do List',
+                    tabBarIcon: ({ color, size }) => (
+                        <Ionicons name="person-outline" color={color} size={size} />
+                    ),
+                }}
+            />
         </Tab.Navigator>
+        </View>
     )
 }
 
