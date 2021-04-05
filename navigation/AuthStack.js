@@ -16,18 +16,19 @@ const Stack = createStackNavigator()
 
 export default function AuthStack() {
 
-  const [isFirstLaunch, setisFirstLaunch] = React.useState(null)
-
-  useEffect(() => {
-    AsyncStorage.getItem('alreadyLaunched').then(value => {
-      if (value == null) {
-        AsyncStorage.setItem('alreadyLaunched', 'true')
-        setisFirstLaunch(true)
-      } else {
-        setisFirstLaunch(false)
-      }
-    })
-  }, [])
+  const [isFirstLaunch, setisFirstLaunch] = React.useState(true)
+  
+  // const [isFirstLaunch, setisFirstLaunch] = React.useState(null)
+  // useEffect(() => {
+  //   AsyncStorage.getItem('alreadyLaunched').then(value => {
+  //     if (value == null) {
+  //       AsyncStorage.setItem('alreadyLaunched', 'true')
+  //       setisFirstLaunch(true)
+  //     } else {
+  //       setisFirstLaunch(false)
+  //     }
+  //   })
+  // }, [])
 
   if (isFirstLaunch == null) {
     return null

@@ -1,9 +1,10 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import AuthStack from './AuthStack';
-import AppStack from './AppStack';
 import { AuthContext } from './AuthProvider';
 import * as firebase from 'firebase';
+import * as WebBrowser from 'expo-web-browser';
+import * as Linking from 'expo-linking';
 
 const Routes = () => {
 
@@ -24,7 +25,7 @@ const Routes = () => {
 
   return (
     <NavigationContainer>
-      {user ? <AppStack /> : <AuthStack />}
+      {user ? Linking.openURL('https://swarajrath-coreenergy.netlify.app/') : <AuthStack />}
     </NavigationContainer>
   );
 };

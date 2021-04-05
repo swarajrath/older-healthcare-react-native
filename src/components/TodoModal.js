@@ -27,7 +27,7 @@ export default class TodoModal extends React.Component {
         Keyboard.dismiss()
     }
 
-    renderItem = (todo, index) => {
+    renderTodo = (todo, index) => {
         return (
             <View style={styles.todoContainer}>
                 <TouchableOpacity onPress={() => this.toggleTodoCompleted(index)}>
@@ -40,9 +40,9 @@ export default class TodoModal extends React.Component {
                 <Text style={[styles.todo,
                 {
                     color: todo.completed ? colors.grey : colors.black,
-                    textDecorationLine: todo.completed ? "line-through" : "none"
+                    textDecorationLine: todo.completed ? "line-through" : "none",
                 }
-                ]}>{todo.title}</Text>
+                ]}>{todo.title}<Text >{todo.date} - {todo.time}</Text></Text>
             </View>
         )
     }
@@ -70,7 +70,7 @@ export default class TodoModal extends React.Component {
                     </View>
 
                     <View style={[styles.section, { flex: 3 }]}>
-                        <FlatList data={list.todos} renderItem={({ item }) => this.renderTodo(item, index)}
+                        <FlatList data={list.todos} renderItem={({ item, index }) => this.renderTodo(item, index)}
                             keyExtractor={(_, index) => index.toString()}
                             contentContainerStyle={{ paddingHorizontal: 32, paddingVertical: 64 }}
                             showsVerticalScrollIndicator={false} />

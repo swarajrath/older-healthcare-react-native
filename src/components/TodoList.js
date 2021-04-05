@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, Modal } from 'react-native'
-import { color } from 'react-native-reanimated';
+// import { color } from 'react-native-reanimated';
 import Colors from '../../styles/Colors';
 import TodoModal from './TodoModal';
 

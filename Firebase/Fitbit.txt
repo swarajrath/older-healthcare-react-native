@@ -1,0 +1,16 @@
+https://www.fitbit.com/oauth2/authorize?response_type=code&client_id=22C7DR&redirect_uri=http://localhost&scope=activity%20nutrition%20heartrate%20location%20nutrition%20profile%20settings%20sleep%20social%20weight
+
+authcode = 650e1dd43104f9e92f3575d414b41f405e7d28d7
+
+
+POST https://api.fitbit.com/oauth2/token
+Authorization: Basic Y2xpZW50X2lkOmNsaWVudCBzZWNyZXQ=
+Content-Type: application/x-www-form-urlencoded
+
+client_id=22942C&grant_type=authorization_code&redirect_uri=https%3A%2F%2Fexample.com%2Ffitbit_auth&code=1234567890
+
+22C7DR:07a909a50c8d77402700b8c12714ac97
+
+MjJDN0RSOjA3YTkwOWE1MGM4ZDc3NDAyNzAwYjhjMTI3MTRhYzk3
+
+http://localhost/?code=15ef880e53386163ef968c89731d7d87a4026a23#_=_

@@ -18,25 +18,25 @@ export default function mission() {
                         showsHorizontalScrollIndicator={false}>
                             <Scroll bgcolor="#FFBE86" 
                             background={require('../../../assets/graphtwo.png')}
-                            title="Game Of Chess"
-                            month = "Sep - Nov"
+                            title="Sound Sleep"
+                            month = "Jan - Feb"
                             animation = "bounceInLeft"
                             />
                              <Scroll bgcolor="#7DC9E7" 
                             background={require('../../../assets/graphtwo.png')}
-                            title="100 Km Jogging"
+                            title="Jogging"
                             month = "Jan - Feb"
                             animation = "bounceInLeft"
                             />
                              <Scroll bgcolor="#FFBE86" 
                             background={require('../../../assets/graphtwo.png')}
-                            title="Netflix and Chill"
-                            month = "March - April"
+                            title="Weight Reduce"
+                            month = "Jan - Feb"
                             />
                              <Scroll bgcolor="#7DC9E7" 
                             background={require('../../../assets/graphtwo.png')}
-                            title="Video Games"
-                            month = "Aug - Sep"
+                            title="Drink Plenty Water"
+                            month = "Jan - Feb"
                             />
                         </ScrollView>
                     </View>
